@@ -25,11 +25,9 @@ steps:
   inputs:
     Contents: '**/*.war'
     TargetFolder: '$(build.artificatsstagingDirectory)'
-
-    
 - task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: '$(build.artificatsstagingDirectory)'
-    ArtifactName: 'warfile'
-    publishLocation : 'container'
+    targetPath: '$(build.artificatsstagingDirectory)'
+    artifact: 'warfile'
+    publishLocation: 'container'
 
