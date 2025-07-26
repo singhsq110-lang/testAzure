@@ -21,13 +21,4 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-- task: CopyFiles@2
-  inputs:
-    Contents: '**/*.war'
-    TargetFolder: '$(build.artificatsstagingDirectory)'
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(build.artificatsstagingDirectory)'
-    artifact: 'warfile'
-    publishLocation: 'container'
 
